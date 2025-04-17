@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica Vicente Pires Ltda</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+            padding-top: 60px;
+        }
+
+        h1, h2, h3 {
+            margin-top: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .navbar {
+            background-color: #1e90ff;
+            padding: 10px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar ul li {
+            margin: 0 15px;
+        }
+
+        .navbar ul li a {
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .navbar ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .hero {
+            background: url('banner.jpg') center/cover no-repeat;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            position: relative;
+        }
+
+        .hero::before {
+            content: "";
+            background-color: rgba(0, 0, 0, 0.4);
+            position: absolute;
+            inset: 0;
+        }
+
+        .hero h2, .hero p, .hero a {
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn-cta {
+            display: inline-block;
+            margin-top: 20px;
+            background-color: #1e90ff;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .btn-cta:hover {
+            background-color: #187bcd;
+        }
+
+        .topo {
+            background-color: #fff;
+            padding: 60px 20px;
+            border-bottom: 2px solid #e0e0e0;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .container-topo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            text-align: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            width: 500px;
+            height: auto;
+        }
+
+        .texto-topo h1 {
+            font-size: 40px;
+            color: #1e90ff;
+        }
+
+        .texto-topo p {
+            font-size: 18px;
+            color: #333;
+            font-style: italic;
+        }
+
+        section, form {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+            background-color: white;
+            margin-top: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #1e90ff;
+        }
+
+        .servico {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+
+        .servico img {
+            width: 300px;
+            border-radius: 10px;
+            flex-shrink: 0;
+        }
+
+        .descricao {
+            flex: 1;
+        }
+
+        .equipe {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .membro {
+            background-color: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 250px;
+            transition: transform 0.3s ease;
+        }
+
+        .membro:hover {
+            transform: translateY(-5px);
+        }
+
+        .membro img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid #1e90ff;
+            margin-bottom: 15px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        form label {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        form input {
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        form button {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #1e90ff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        form button:hover {
+            background-color: #187bcd;
+        }
+
+        .rodape {
+            background-color: #1e90ff;
+            color: white;
+            text-align: center;
+            padding: 20px 10px;
+            margin-top: 40px;
+            font-size: 14px;
+            border-top: 4px solid #187bcd;
+        }
+
+        .rodape a {
+            color: white;
+            margin: 0 10px;
+        }
+
+        @media (max-width: 768px) {
+            .servico, .container-topo {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .logo {
+                width: 80%;
+            }
+
+            .servico img {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#equipe">Equipe</a></li>
+            <li><a href="#formulario">Contato</a></li>
+        </ul>
+    </nav>
+
+
+    <header class="topo">
+        <div class="container-topo">
+            <img src="logo.png" alt="Logo Clínica Vicente Pires" class="logo">
+            <div class="texto-topo">
+                <h1>Clínica Vicente Pires Ltda</h1>
+                <p>Seu bem-estar é a nossa prioridade.</p>
+            </div>
+        </div>
+    </header>
+
+    <section id="servicos">
+        <h2>Nossos Serviços</h2>
+
+        <div class="servico">
+            <img src="consulta_medica.jpg" alt="Consulta Médica">
+            <div class="descricao">
+                <h3>Atendimento Médico Especializado</h3>
+                <p>Contamos com profissionais altamente capacitados em diversas especialidades médicas.</p>
+                <p><strong>Especialidades:</strong> Cardiologia, Pediatria, Clínica Geral, Ginecologia e Ortopedia.</p>
+            </div>
+        </div>
+
+        <div class="servico">
+            <img src="laboratorio.jpg" alt="Exames Laboratoriais">
+            <div class="descricao">
+                <h3>Exames Laboratoriais</h3>
+                <p>Exames com precisão e rapidez, com resultados disponíveis online.</p>
+                <p><strong>Exames:</strong> Hemograma, Glicemia, Colesterol e COVID-19.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="equipe">
+        <h2>Nossa Equipe</h2>
+        <div class="equipe">
+            <div class="membro">
+                <img src="medico1.jpg" alt="Dr. Marcelo Araújo">
+                <h3>Dr. Marcelo Araújo</h3>
+                <p>Cardiologista</p>
+            </div>
+            <div class="membro">
+                <img src="medico2.jpg" alt="Dra. Ana Vitória">
+                <h3>Dra. Ana Vitória</h3>
+                <p>Pediatra</p>
+            </div>
+            <div class="membro">
+                <img src="medico3.jpg" alt="Dr. Kaique Luan">
+                <h3>Dr. Kaique Luan</h3>
+                <p>Clínico Geral</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="formulario">
+        <h2>Quer saber mais sobre nossos serviços?</h2>
+        <p style="text-align:center;">Preencha o formulário abaixo e fique por dentro das novidades da nossa clínica.</p>
+        <form>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="cidade">Cidade:</label>
+            <input type="text" id="cidade" name="cidade" required>
+
+            <label for="estado">Estado:</label>
+            <input type="text" id="estado" name="estado" required>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <footer class="rodape">
+        <p>Clínica Vicente Pires Ltda</p>
+        <p>Endereço: Rua Saúde, 123 - Vicente Pires, DF</p>
+        <p>Telefone: (61) 99999-9999 | Email: clinica.ltda@vicentepires.com.br</p>
+        <p><a href="#servicos">Serviços</a> | <a href="#equipe">Equipe</a> | <a href="#formulario">Contato</a></p>
+        <p>&copy; 2025 - Todos os direitos reservados</p>
+    </footer>
+</body>
+</html>
+
